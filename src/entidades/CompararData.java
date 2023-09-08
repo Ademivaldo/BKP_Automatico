@@ -49,7 +49,7 @@ public class CompararData {
 								if(horaO == horaD) {
 									if(minO == minD) {
 										if(secO == secD) {
-											System.out.println("As datas coincidem. Nada a ser feito\n");
+											//System.out.println("As datas coincidem. Nada a ser feito\n");
 										}else {
 											if(secO > secD && horaO >= horaD ) {
 											listPastaDiferenteNome.add(elemento);
