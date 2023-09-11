@@ -1,9 +1,12 @@
-package entidades;
+package metodo;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import entidades.CompararData;
+import entidades.Pastas;
 
 
 public class VerificaPasta {
@@ -36,12 +39,12 @@ public class VerificaPasta {
 			File[] arquivosO = verificaOrigem.listFiles();
 
 			// Iterar sobre os arquivos
-			for (File arquivoO : arquivosO) {
+			for (File arquivo : arquivosO) {
 				// se NEGAR ele lista as pastas 
 				// se não NEGAR lista arquivos
 				
-				if (!arquivoO.isFile()) {
-					arquivosEncontradosO.add(arquivoO);
+				if (!arquivo.isFile()) {
+					arquivosEncontradosO.add(arquivo);
 					contadorO++;
 				}
 			}
@@ -107,11 +110,11 @@ public class VerificaPasta {
 		System.out.println("Arquivos Encontrados Destino: " + contadorD);
 		System.out.println("\n------------------------------------------------------------\n");
 		
-		if (VerificaArquivos.Retorno() == 1) {
-			String[] pastaOrigemData = new String[VerificaArquivos.RetornoOrigem()];
-			String[] pastaOrigemNome = new String[VerificaArquivos.RetornoOrigem()];
-			String[] pastaDestinoData = new String[VerificaArquivos.RetornoDestino()];
-			String[] pastaDestinoNome = new String[VerificaArquivos.RetornoDestino()];
+		if (VerificaPasta.Retorno() == 1) {
+			String[] pastaOrigemData = new String[VerificaPasta.RetornoOrigem()];
+			String[] pastaOrigemNome = new String[VerificaPasta.RetornoOrigem()];
+			String[] pastaDestinoData = new String[VerificaPasta.RetornoDestino()];
+			String[] pastaDestinoNome = new String[VerificaPasta.RetornoDestino()];
 
 			int i = 0;
 			for (File arquivo : RetornoPastasEncontradasO()) {

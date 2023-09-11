@@ -7,8 +7,8 @@ import java.io.PrintStream;
 
 import entidades.Pastas;
 
-import entidades.VerificaArquivos;
-import entidades.VerificaPasta;
+import metodo.VerificaArquivos;
+import metodo.VerificaPasta;
 public class App {
 
 
@@ -26,7 +26,7 @@ public class App {
 		File verificaDestino = new File(pasta.getDestino());
 		
 
-		VerificaArquivos.VerificaArquivos(verificaOrigem, verificaDestino, pasta);
+		VerificaArquivos.VerificaArquivos(verificaOrigem, verificaDestino);
 		VerificaPasta.VerificaPasta(verificaOrigem, verificaDestino, pasta);
 		
 	}

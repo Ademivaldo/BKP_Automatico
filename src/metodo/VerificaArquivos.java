@@ -1,9 +1,12 @@
-package entidades;
+package metodo;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import entidades.CompararData;
+import entidades.Pastas;
 
 
 
@@ -23,7 +26,7 @@ public class VerificaArquivos {
 	
 	static List<String> listPastaDiferenteNome = new ArrayList<>();
 	
-	public static void VerificaArquivos(File Origem, File Destino, Pastas pasta ) {
+	public static void VerificaArquivos(File Origem, File Destino ) {
 		File verificaOrigem = Origem;
 		File verificaDestino = Destino;
 		
@@ -155,7 +158,7 @@ public class VerificaArquivos {
 
 					if (listPastaDiferenteNome.size() > 0) {
 						try {
-							CopiarPasta.CopiaPasta(pasta.getOrigem(), pasta.getDestino(), listPastaDiferenteNome);
+							CopiarPasta.CopiaPasta(Origem.getPath(), Destino.getPath(), listPastaDiferenteNome);
 							System.out.println("\nFoi copiadas agora!!\n");
 							System.out.println("\nLista copiada: " + listPastaDiferenteNome);
 						}
@@ -186,7 +189,7 @@ public class VerificaArquivos {
 					listPastaDiferenteNome.addAll(CompararData.listaRetorno(listPastaOrigemNome, listPastaDestinoNome,
 							pastaOrigemData, pastaDestinoData));
 					try {
-						CopiarPasta.CopiaPasta(pasta.getOrigem(), pasta.getDestino(), listPastaDiferenteNome);
+						CopiarPasta.CopiaPasta(Origem.getPath(), Destino.getPath(), listPastaDiferenteNome);
 						System.out.println("\nCopia realizada!!\n");
 						System.out.println("\nLista copiada: " + listPastaDiferenteNome);
 					}
@@ -220,7 +223,7 @@ public class VerificaArquivos {
 						case 1:
 							System.out.println("\n1 Arquivo foi encontradas em divergencia com o Backup!!!\n");
 							try {
-								CopiarPasta.CopiaPasta(pasta.getOrigem(), pasta.getDestino(), listPastaDiferenteNome);
+								CopiarPasta.CopiaPasta(Origem.getPath(), Destino.getPath(), listPastaDiferenteNome);
 								System.out.println("\nFoi copiado agora!!\n");
 								System.out.println("\nLista copiada: " + listPastaDiferenteNome);
 							}
@@ -233,7 +236,7 @@ public class VerificaArquivos {
 						default:
 							System.out.println("\n" + t + " Arquivos foram encontrados em divergencia com o Backup!!!\n");				
 							try {
-								CopiarPasta.CopiaPasta(pasta.getOrigem(), pasta.getDestino(), listPastaDiferenteNome);
+								CopiarPasta.CopiaPasta(Origem.getPath(), Destino.getPath(), listPastaDiferenteNome);
 								System.out.println("\nForam copiados agora!!\n");
 								System.out.println("\nLista copiada: " + listPastaDiferenteNome);
 							}
@@ -251,7 +254,7 @@ public class VerificaArquivos {
 
 						if (listPastaDiferenteNome.size() > 0) {
 							try {
-								CopiarPasta.CopiaPasta(pasta.getOrigem(), pasta.getDestino(), listPastaDiferenteNome);
+								CopiarPasta.CopiaPasta(Origem.getPath(), Destino.getPath(), listPastaDiferenteNome);
 								System.out.println("\nFoi copiadas agora!!\n");
 								System.out.println("\nLista copiada: " + listPastaDiferenteNome);
 							}
@@ -273,7 +276,7 @@ public class VerificaArquivos {
 						}
 					}
 					try {
-						CopiarPasta.CopiaPasta(pasta.getOrigem(), pasta.getDestino(), listPastaDiferenteNome);
+						CopiarPasta.CopiaPasta(Origem.getPath(), Destino.getPath(), listPastaDiferenteNome);
 						System.out.println("\nMesma quantidade, nomes diferentes!! Foram copiadas agora");
 						System.out.println("\nLista copiada: " + listPastaDiferenteNome);
 					}
@@ -283,7 +286,7 @@ public class VerificaArquivos {
 					
 				}
 			}
-
+	
 		}
 	}
 	
