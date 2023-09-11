@@ -10,9 +10,7 @@ public class CompararData {
 		this.listaTemp = listaTempEntrada;
 	}
 
-	public void setListaTemp(List<String> listaTempEntrada) {
-		this.listaTemp = listaTempEntrada;
-	}
+	
 	
 	public static List<String> listaRetorno(List<String> listaOrigem, List<String> listaDestino, String[] DataOString, String[] DataDString){
 		

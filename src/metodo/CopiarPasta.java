@@ -3,18 +3,24 @@ package metodo;
 import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.util.List;
 
 public class CopiarPasta {
 	Path Origem = null;
 	Path Destino = null;
+	static List<String> pastas = null;
 	
-	public static void CopiaPasta(String origem, String destino) throws IOException{
+	public static void CopiaPasta(String origem, String destino, List<String> pastasDiferentes) throws IOException{
 		 Path Origem = Paths.get(origem);
 		 Path Destino = Paths.get(destino);
-	
-	
-	// Realiza a cópia recursiva do diretório de origem para o destino
-		 Files.walkFileTree(Origem, new SimpleFileVisitor<Path>() {
+		 pastas = pastasDiferentes;
+		
+		 for(int i=0; i<pastas.size(); i++) {
+				// Realiza a cópia recursiva do diretório de origem para o destino
+				 Path OrigemPasta = Paths.get(Origem+"\\"+pastas.get(i));
+		 
+
+		 Files.walkFileTree(OrigemPasta, new SimpleFileVisitor<Path>() {
 	         @Override
 	         //								inicia um path "Basicamente faz o atributo virar o nome de caminho"
 	         public FileVisitResult visitFile(Path Pasta, BasicFileAttributes attrs) throws IOException {
@@ -35,5 +41,6 @@ public class CopiarPasta {
 	             return FileVisitResult.CONTINUE;
 	         }
 	     });
+		 }
 		}
 	}
