@@ -19,8 +19,8 @@ public class App {
 
 		Pastas pasta = new Pastas();
 
-		pasta.setOrigem("D:\\Users\\78_tic\\Desktop\\Para Servidor");
-		pasta.setDestino("K:\\Felipe\\BKP Automatico");
+		pasta.setOrigem("D:\\Users\\78_tic\\Documents\\Gerais");
+		pasta.setDestino("D:\\Users\\78_tic\\Documents\\Documentos");
 		
 		File verificaOrigem = new File(pasta.getOrigem());
 		File verificaDestino = new File(pasta.getDestino());
