@@ -13,14 +13,14 @@ public class App {
 
 
 	public static void main(String[] args) throws IOException {
-		PrintStream consoleLog = new PrintStream(new FileOutputStream("D:\\Users\\78_tic\\Desktop\\Para Servidor\\teste.txt"));// Coloque o caminho para a saida do log
+		PrintStream consoleLog = new PrintStream(new FileOutputStream("D:\\CAMINHO\\SAIDA\\teste.txt"));// Coloque o caminho para a saida do log
 		System.setOut(consoleLog);
 		System.setErr(consoleLog);
 
 		Pastas pasta = new Pastas();
 
-		pasta.setOrigem("D:\\Users\\78_tic\\Desktop\\Para Servidor");
-		pasta.setDestino("K:\\Felipe\\BKP Automatico");
+		pasta.setOrigem("C:\\PASTA\\ORIGEM");
+		pasta.setDestino("D:\\PASTA\\DESTINO");
 		
 		File verificaOrigem = new File(pasta.getOrigem());
 		File verificaDestino = new File(pasta.getDestino());
